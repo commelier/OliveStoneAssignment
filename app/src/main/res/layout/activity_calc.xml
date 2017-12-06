@@ -23,7 +23,8 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:background="@color/gray"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:inputType="number"/>
         <Button
             android:id="@+id/btn_execution"
             android:layout_width="wrap_content"

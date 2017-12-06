@@ -17,7 +17,7 @@ public class HistoryActivity extends BaseActivity{
 
     @Override
     protected void injectViews() {
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @Override
