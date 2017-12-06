@@ -25,9 +25,26 @@
             android:background="@color/gray"
             android:layout_gravity="center_horizontal"/>
         <Button
+            android:id="@+id/btn_execution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Go!"
             android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="연산 결과는"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12345"
+            android:gravity="center"/>
     </LinearLayout>
 </LinearLayout>
