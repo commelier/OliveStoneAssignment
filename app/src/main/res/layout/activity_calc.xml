@@ -7,12 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:id="@+id/btn_back"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/img_233998"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="피보나치 수열 계산하기"/>
+            android:text="피보나치 수열 계산하기"
+            android:layout_gravity="center"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

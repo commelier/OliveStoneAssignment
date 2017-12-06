@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.ryubomee.olivestoneassignment.Adapter.HistoryRecycleAdapter;
 import com.example.ryubomee.olivestoneassignment.R;
+import com.example.ryubomee.olivestoneassignment.Utils.NavigationUtils;
 import com.example.ryubomee.olivestoneassignment.base.BaseActivity;
 import com.example.ryubomee.olivestoneassignment.data.HistoryData;
 import com.example.ryubomee.olivestoneassignment.presenters.HistoryContract;
@@ -17,6 +18,7 @@ import com.example.ryubomee.olivestoneassignment.presenters.HistoryPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.realm.Realm;
 
 public class HistoryActivity extends BaseActivity implements HistoryContract.View {
@@ -35,6 +37,7 @@ public class HistoryActivity extends BaseActivity implements HistoryContract.Vie
 
     private RecyclerView recyclerView;
     private HistoryRecycleAdapter adapter;
+
     Realm realm;
 
     @Override
@@ -67,7 +70,7 @@ public class HistoryActivity extends BaseActivity implements HistoryContract.Vie
     }
 
     private void setUpRecyclerView() {
-        adapter = new HistoryRecycleAdapter(realm.where(HistoryData.class).findAll(),true);
+        adapter = new HistoryRecycleAdapter(realm.where(HistoryData.class).findAll(), true);
         listView.setLayoutManager(new LinearLayoutManager(mContext));
         listView.setAdapter(adapter);
         listView.setHasFixedSize(true);
@@ -78,5 +81,10 @@ public class HistoryActivity extends BaseActivity implements HistoryContract.Vie
     protected void onDestroy() {
         super.onDestroy();
         historyPresenter.detachView();
+    }
+
+    @OnClick(R.id.btn_back)
+    public void onViewClicked() {
+        NavigationUtils.goMainActivity(mContext);
     }
 }
