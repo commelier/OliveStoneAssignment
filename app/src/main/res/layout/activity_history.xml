@@ -10,16 +10,13 @@
         android:id="@+id/top_bar">
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="20dp"
-            android:layout_height="25dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/img_233998"/>
+            style="@style/BackBtn"/>
         <TextView
             android:id="@+id/text_top_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="계산 이력"
-            android:layout_gravity="center"/>
+            style="@style/TopTitleBar"/>
     </LinearLayout>
     <ScrollView
         android:id="@+id/scroll_view"

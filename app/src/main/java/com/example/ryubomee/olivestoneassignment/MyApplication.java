@@ -18,5 +18,6 @@ public class MyApplication extends Application {
 //        Realm realm = Realm.getDefaultInstance();
         RealmConfiguration config = new RealmConfiguration.Builder().name("realmHistory,realm").build();
         Realm.setDefaultConfiguration(config);
+        Realm realm = Realm.getDefaultInstance();
     }
 }
