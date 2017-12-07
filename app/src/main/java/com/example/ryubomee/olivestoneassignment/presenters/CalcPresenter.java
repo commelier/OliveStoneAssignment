@@ -2,6 +2,9 @@ package com.example.ryubomee.olivestoneassignment.presenters;
 
 /**
  * Created by RyuBomee on 2017. 12. 7..
+ *
+ * show something while executing programs
+ *
  */
 
 public class CalcPresenter implements CalcContract.Presenter {

@@ -53,6 +53,9 @@ public class CalcActivity extends BaseActivity implements CalcContract.View {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //setting presenter
+
         calcPresenter = new CalcPresenter();
         calcPresenter.attachView(this);
 
@@ -63,6 +66,7 @@ public class CalcActivity extends BaseActivity implements CalcContract.View {
     public void onViewClicked() {
 //        Log.d("sherry test","clicked go buton");
 //        Log.d("sherry test",editInput.getText().toString());
+        //execulate fibonacci calculation
         int num = Integer.parseInt(editInput.getText().toString());
         textResult.setText(Long.toString(fibonacci(num))); //show result of execution
     }
@@ -73,6 +77,8 @@ public class CalcActivity extends BaseActivity implements CalcContract.View {
                 .reduce((a, b) -> b)
                 .get()[0];
         int result = Integer.parseInt(Long.toString(longResult));
+
+        //save into realm database
         try {
             Log.d("bomee", "add  - " + result);
             realm.beginTransaction();
@@ -90,11 +96,15 @@ public class CalcActivity extends BaseActivity implements CalcContract.View {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        //detach the view
         calcPresenter.detachView();
     }
 
     @OnClick(R.id.btn_back)
     public void onBackBtnClicked() {
+
+        //go to MainActivity
         NavigationUtils.goMainActivity(mContext);
     }
 }

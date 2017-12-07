@@ -16,6 +16,9 @@ import io.realm.OrderedRealmCollection;
 
 /**
  * Created by RyuBomee on 2017. 12. 7..
+ *
+ * this class is for making recyclerView & viewHolder
+ * it makes your program more smooth, and also it uses less memory
  */
 
 public class HistoryRecycleAdapter extends RealmRecyclerViewAdapter<HistoryData, HistoryRecycleAdapter.MyViewHolder> {

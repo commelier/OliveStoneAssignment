@@ -6,6 +6,9 @@ import io.realm.RealmObject;
 
 /**
  * Created by RyuBomee on 2017. 12. 6..
+ *
+ * this models is about information what you have to save
+ *
  */
 
 public class HistoryData extends RealmObject{

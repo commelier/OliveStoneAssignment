@@ -49,6 +49,7 @@ public class MainActivity extends BaseActivity{
 
     @OnClick({R.id.btn_go_to_cal, R.id.btn_cal_history})
     public void onViewClicked(View view) {
+        //if you click go to calcution btn, goCalcActivity will appears the other one is for historyActivity.
         switch (view.getId()) {
             case R.id.btn_go_to_cal:
                 NavigationUtils.goCalcActivity(mContext);

@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by RyuBomee on 2017. 12. 6..
+ *
+ * BaseActivity shows what you need to implement when you make a activity
+ *
  */
 
 public abstract class BaseActivity extends AppCompatActivity {

@@ -58,9 +58,15 @@ public class HistoryActivity extends BaseActivity implements HistoryContract.Vie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //set presenter
         historyPresenter = new HistoryPresenter();
         historyPresenter.attachView(this);
+
+        //load realm instance
         realm = Realm.getDefaultInstance();
+
+        //set up recyclerView
         try {
             setUpRecyclerView();
         } finally {
@@ -68,7 +74,7 @@ public class HistoryActivity extends BaseActivity implements HistoryContract.Vie
         }
 
     }
-
+    //setup recyclerView for managing memory well
     private void setUpRecyclerView() {
         adapter = new HistoryRecycleAdapter(realm.where(HistoryData.class).findAll(), true);
         listView.setLayoutManager(new LinearLayoutManager(mContext));

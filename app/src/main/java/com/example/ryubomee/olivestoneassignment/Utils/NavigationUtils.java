@@ -13,6 +13,8 @@ import com.example.ryubomee.olivestoneassignment.activities.MainActivity;
 
 public class NavigationUtils {
 
+    //this class is for moving to other activity convenience
+
     public static void goHistoryActivity(Context context){
         Intent intent = new Intent (context, HistoryActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

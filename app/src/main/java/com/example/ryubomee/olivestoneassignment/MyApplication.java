@@ -15,7 +15,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Realm.init(this);
-//        Realm realm = Realm.getDefaultInstance();
         RealmConfiguration config = new RealmConfiguration.Builder().name("realmHistory,realm").build();
         Realm.setDefaultConfiguration(config);
         Realm realm = Realm.getDefaultInstance();
