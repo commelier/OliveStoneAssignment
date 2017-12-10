@@ -19,5 +19,10 @@ public interface CalcContract {
 
         void detachView();
 
+        void calcFibo(long num);
+
+        long getFiboResult();
+
+        void saveHistory(long input, long result);
     }
 }

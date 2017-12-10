@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ryubomee.olivestoneassignment.R;
 import com.example.ryubomee.olivestoneassignment.Utils.NavigationUtils;
@@ -64,28 +65,22 @@ public class CalcActivity extends BaseActivity implements CalcContract.View {
 
     @OnClick(R.id.btn_execution)
     public void onViewClicked() {
-//        Log.d("sherry test","clicked go buton");
-//        Log.d("sherry test",editInput.getText().toString());
-        //execulate fibonacci calculation
-        int num = Integer.parseInt(editInput.getText().toString());
-        textResult.setText(Long.toString(fibonacci(num))); //show result of execution
+        long num = Integer.parseInt(editInput.getText().toString());
+        try {
+            textResult.setText(Long.toString(fibonacci(num))); //show result of execution
+        }catch (Exception e){
+            Log.d("bomee","error : "+e.getMessage());
+            Toast.makeText(mContext,"계산 할 수 없는 큰 수입니다. 작은 수를 입력해주세요.",Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public int fibonacci(int num) {
-        long longResult = Stream.iterate(new long[]{1, 1}, f -> new long[]{f[1], f[0] + f[1]})
-                .limit(num)
-                .reduce((a, b) -> b)
-                .get()[0];
-        int result = Integer.parseInt(Long.toString(longResult));
+    public long fibonacci(long num) {
+        calcPresenter.calcFibo(num);
+        long result = calcPresenter.getFiboResult();
 
-        //save into realm database
         try {
             Log.d("bomee", "add  - " + result);
-            realm.beginTransaction();
-            HistoryData historyData = realm.createObject(HistoryData.class);
-            historyData.setInput(num);
-            historyData.setResult(result);
-            realm.commitTransaction();
+            calcPresenter.saveHistory(num, result);
 
         } catch (Exception e) {
             Log.d("bomee", e.getMessage());

@@ -19,4 +19,9 @@
         <item name="android:layout_height">25dp</item>
         <item name="android:layout_margin">10dp</item>
     </style>
+    <style name="BasicAlign">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
 </resources>

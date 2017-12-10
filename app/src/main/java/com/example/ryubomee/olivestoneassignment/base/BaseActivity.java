@@ -18,7 +18,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     protected abstract int getContentView();
-    protected abstract void injectViews();          //ButterKnife를 사용할 메소드
+    protected abstract void injectViews();
     protected abstract void registerHandler();
 
     @Override

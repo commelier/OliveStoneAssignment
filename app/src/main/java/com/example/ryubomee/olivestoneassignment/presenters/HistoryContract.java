@@ -23,8 +23,5 @@ public interface HistoryContract {
 
         void detachView ();
 
-        void setHistoryData(HistoryData historyData);
-
-        void loadHistory (Context context);
     }
 }

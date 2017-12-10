@@ -11,7 +11,7 @@ import com.example.ryubomee.olivestoneassignment.data.HistoryData;
 public class HistoryPresenter implements HistoryContract.Presenter {
 
     private HistoryContract.View view;
-    private HistoryData historyData;
+
     @Override
     public void attachView(HistoryContract.View view) {
         this.view = view;
@@ -24,13 +24,4 @@ public class HistoryPresenter implements HistoryContract.Presenter {
 
     }
 
-    @Override
-    public void setHistoryData(HistoryData historyData) {
-        this.historyData = historyData;
-    }
-
-    @Override
-    public void loadHistory(Context context) {
-//        historyData.getList(context);
-    }
 }

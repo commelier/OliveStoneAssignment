@@ -80,7 +80,6 @@ public class HistoryActivity extends BaseActivity implements HistoryContract.Vie
         listView.setLayoutManager(new LinearLayoutManager(mContext));
         listView.setAdapter(adapter);
         listView.setHasFixedSize(true);
-
     }
 
     @Override
