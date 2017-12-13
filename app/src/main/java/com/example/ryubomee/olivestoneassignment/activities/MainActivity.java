@@ -17,8 +17,7 @@ import butterknife.OnClick;
  * Created by BomeeRyu on 2017.12.06
  */
 
-public class MainActivity extends BaseActivity{
-
+public class MainActivity extends BaseActivity {
 
 
     @BindView(R.id.btn_go_to_cal)
@@ -47,21 +46,22 @@ public class MainActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
     }
 
-    @OnClick({R.id.btn_go_to_cal, R.id.btn_cal_history})
-    public void onViewClicked(View view) {
-        //if you click go to calcution btn, goCalcActivity will appears the other one is for historyActivity.
-        switch (view.getId()) {
-            case R.id.btn_go_to_cal:
-                NavigationUtils.goCalcActivity(mContext);
-                break;
-            case R.id.btn_cal_history:
-                NavigationUtils.goHistoryActivity(mContext);
-                break;
-        }
-    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+
+    //if you click go to calcution btn, goCalcActivity will appears the other one is for historyActivity.
+
+    @OnClick(R.id.btn_go_to_cal)
+    public void onBtnGoToCalClicked() {
+        NavigationUtils.goCalcActivity(mContext);
+    }
+
+    @OnClick(R.id.btn_cal_history)
+    public void onBtnCalHistoryClicked() {
+        NavigationUtils.goHistoryActivity(mContext);
     }
 }

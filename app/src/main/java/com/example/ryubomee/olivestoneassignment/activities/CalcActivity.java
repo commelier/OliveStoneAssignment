@@ -70,7 +70,7 @@ public class CalcActivity extends BaseActivity implements CalcContract.View {
             textResult.setText(Long.toString(fibonacci(num))); //show result of execution
         }catch (Exception e){
             Log.d("bomee","error : "+e.getMessage());
-            Toast.makeText(mContext,"계산 할 수 없는 큰 수입니다. 작은 수를 입력해주세요.",Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext,"계산 할 수 없는 수입니다. 음수와 표현할 수 없는 큰 수는 계산 불가",Toast.LENGTH_SHORT).show();
         }
     }
 

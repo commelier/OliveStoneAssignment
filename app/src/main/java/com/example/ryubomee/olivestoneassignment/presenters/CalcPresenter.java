@@ -30,7 +30,7 @@ public class CalcPresenter implements CalcContract.Presenter {
 
     @Override
     public void calcFibo(long num) {
-        result = historyData.getCalcFibo(num);
+        result = HistoryData.getCalcFibo(num);
     }
 
     @Override
